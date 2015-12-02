@@ -31,7 +31,7 @@ namespace MrkViewer.Core
             };
 
             // Accomodate iPhone status bar.
-            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+            this.Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
 
             // Build the page.
             this.Content = new StackLayout
@@ -45,7 +45,8 @@ namespace MrkViewer.Core
 
             var openFileButton = new ToolbarItem
             {
-                Text = "Open"
+                Text = "Open",
+                Icon = "open.png"
             };
             openFileButton.Clicked += async (s, a) =>
             {
@@ -56,7 +57,9 @@ namespace MrkViewer.Core
                 var html = CommonMark.CommonMarkConverter.Convert(mdFile.Content);
 
                 var content = @"
-<head><link rel='stylesheet' href='ms-appx-web:///Assets/github-markdown.css'>
+<head>
+<link rel='stylesheet' href='ms-appx-web:///Assets/github-markdown.css'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
 <style>
     .markdown-body {
         min-width: 200px;
@@ -65,13 +68,8 @@ namespace MrkViewer.Core
         padding: 30px;
     }
 </style>
-</head>
-<body>
-<article class='markdown-body'>
-" + html
- + @" 
-</article>
-</body>";
+</head><body><article class='markdown-body'>" + html
+ + @"</article></body>";
                 webView.Source = new HtmlWebViewSource
                     {
                         Html = content
