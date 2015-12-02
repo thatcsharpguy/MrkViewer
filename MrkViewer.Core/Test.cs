@@ -24,7 +24,6 @@ Para simular la entrada y salida estandar, digamos, el teclado y la pantalla, te
 ## ¿Qué se puede hacer con él?
 Básicamente todo lo que se puede hacer con una aplicación de consola recién creada, salidas, entradas de texto. Tampoco esperes tener mucho soporte para librerías que no proporciona el framework.  
 ";
-
             return CommonMark.CommonMarkConverter.Convert(txt);
 
         }

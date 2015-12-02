@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
   <Identity Name="e071cca5-1008-404c-89d9-f11d102b705d" Publisher="CN=Antonio" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>MdViewer</DisplayName>
+    <DisplayName>MrkViewer</DisplayName>
     <PublisherDisplayName>Antonio</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
