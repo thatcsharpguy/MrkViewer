@@ -46,7 +46,7 @@ namespace MrkViewer.Core
             var openFileButton = new ToolbarItem
             {
                 Text = "Open",
-                Icon = "open.png"
+                //Icon = "open.png"
             };
             openFileButton.Clicked += async (s, a) =>
             {

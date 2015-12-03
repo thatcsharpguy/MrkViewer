@@ -11,7 +11,7 @@ namespace MrkViewer.Core
     {
         public MrkViewerApp()
         {
-            MainPage = new ViewPage();
+			MainPage = new NavigationPage(new ViewPage());
 
         }
     }
