@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommonMark;
+using MrkViewer.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +11,18 @@ namespace MrkViewer.Core
 {
     public class MrkViewerApp : Xamarin.Forms.Application
     {
+
+
         public MrkViewerApp()
         {
-			MainPage = new NavigationPage(new ViewPage());
+            CommonMarkSettings.Default.OutputDelegate = 
+                (doc, output, settings) => new BoxedHtmlFormatter(output, settings).WriteDocument(doc);
+            MainPage = new ViewPage();
+        }
 
+        public void SetExternDocument(MarkdownFile file)
+        {
+            (MainPage as ViewPage).SetExternDocument(file);
         }
     }
 }

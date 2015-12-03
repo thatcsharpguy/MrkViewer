@@ -23,9 +23,7 @@ namespace MrkViewer.Windows8.Services
             StorageFile file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
-                var mdFile = new MarkdownFile();
-                mdFile.FileName = file.DisplayName;
-                mdFile.Content = await FileIO.ReadTextAsync(file);
+                var mdFile = await ConvertFile(file);
                 return mdFile;
 
             }
@@ -33,6 +31,14 @@ namespace MrkViewer.Windows8.Services
             {
                 return null;
             }
+        }
+
+        public async Task<MarkdownFile> ConvertFile(StorageFile file)
+        {
+            var md = new MarkdownFile();
+            md.FileName = file.DisplayName;
+            md.Content = await FileIO.ReadTextAsync(file);
+            return md;
         }
     }
 }

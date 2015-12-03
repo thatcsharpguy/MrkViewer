@@ -11,44 +11,53 @@ namespace MdViewer.Core
     {
 
 
-        private const string HtmlSegment1 = @"<html><head><link rel='stylesheet' href='";
-
+        private const string HtmlSegment1 = @"
+<html>
+    <head>
+        <link rel='stylesheet' href='";
 
         private const string HtmlSegment2 =
-            @"'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'><style>
-    .markdown-body {
-        min-width: 200px;
-        max-width: 790px;
-        margin: 0 auto;
-        padding: 30px;
-    }
-</style></head><body><article class='markdown-body'>";
+            @"'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+        <style>
+            .markdown-body {
+                min-width: 200px;
+                max-width: 790px;
+                margin: 0 auto;
+                padding: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <article class='markdown-body'>";
 
-        private const string HtmlSegment3 = @"</article></body>";
+        private const string HtmlSegment3 = @"
+        </article>
+    </body>
+</html>";
 
-        public MarkdownWebViewSource(string fileName, string content)
+        private readonly string _baseUrl;
+
+        public MarkdownWebViewSource(string markdown, string baseUrl)
         {
-            FileName = fileName;
-            Content = content;
-            base.Html = HtmlSegment1 + GetCssResorurceUri() + HtmlSegment2 + Content + HtmlSegment3;
+            Markdown = markdown;
+            _baseUrl = baseUrl;
+
+            
+
+
+            base.Html = HtmlSegment1 +
+                GetCss() +
+                HtmlSegment2 +
+                CommonMark.CommonMarkConverter.Convert(markdown) +
+                HtmlSegment3;
         }
 
-        public string FileName { get; private set; }
+        public string Markdown { get; private set; }
 
-        public string Content { get; private set; }
-
-
-
-        private string GetCssResorurceUri()
+        private string GetCss()
         {
-            string uri = "";
-
-            //if (TargetPlatform.Windows == Device.OS) // Weird error
-            {
-                uri = "ms-appx-web:///Assets/github-markdown.css";
-            }
-
-            return uri;
+            return _baseUrl + "github-markdown.css";
         }
     }
 }
