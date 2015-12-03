@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MdViewer.Core;
 using Xamarin.Forms;
 
 namespace MrkViewer.Core
@@ -50,30 +51,12 @@ namespace MrkViewer.Core
             };
             openFileButton.Clicked += async (s, a) =>
             {
-                var _fileManager = DependencyService.Get<IFileManager>();
+                var fileManager = DependencyService.Get<IFileManager>();
 
-                var mdFile = await _fileManager.LoadFile();
+                var mdFile = await fileManager.LoadFile();
                 header.Text = mdFile.FileName;
                 var html = CommonMark.CommonMarkConverter.Convert(mdFile.Content);
-
-                var content = @"
-<head>
-<link rel='stylesheet' href='ms-appx-web:///Assets/github-markdown.css'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
-<style>
-    .markdown-body {
-        min-width: 200px;
-        max-width: 790px;
-        margin: 0 auto;
-        padding: 30px;
-    }
-</style>
-</head><body><article class='markdown-body'>" + html
- + @"</article></body>";
-                webView.Source = new HtmlWebViewSource
-                    {
-                        Html = content
-                    };
+                webView.Source = new MarkdownWebViewSource(mdFile.FileName, html);
             };
             ToolbarItems.Add(openFileButton);
 
