@@ -30,6 +30,24 @@ namespace MrkViewer.Droid
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+            //Intent intent = Intent;
+            string action = Intent.Action;
+            string type = Intent.Type;
+
+            if (Intent.ActionSend.Equals(action) && !String.IsNullOrEmpty(type))
+            {
+                Android.Net.Uri fileUri = (Android.Net.Uri)Intent.GetParcelableExtra(Intent.ExtraStream);
+                if (fileUri != null)
+                {
+                    using (var fileInput = ContentResolver.OpenInputStream(fileUri))
+                    {
+
+                    }
+                }
+            }
+
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
             var app = new MrkViewerApp();
             LoadApplication(app);
