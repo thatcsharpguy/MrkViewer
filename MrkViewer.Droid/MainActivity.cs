@@ -35,21 +35,24 @@ namespace MrkViewer.Droid
             string action = Intent.Action;
             string type = Intent.Type;
 
-            if (Intent.ActionSend.Equals(action) && !String.IsNullOrEmpty(type))
+            global::Xamarin.Forms.Forms.Init(this, bundle);
+            var app = new MrkViewerApp();
+            if (Intent.ActionView.Equals(action) && !String.IsNullOrEmpty(type))
             {
-                Android.Net.Uri fileUri = (Android.Net.Uri)Intent.GetParcelableExtra(Intent.ExtraStream);
+
+                Android.Net.Uri fileUri = (Android.Net.Uri) Intent.Data;
                 if (fileUri != null)
                 {
-                    using (var fileInput = ContentResolver.OpenInputStream(fileUri))
+                    string text = System.IO.File.ReadAllText(fileUri.Path);
+                    app.SetExternDocument(new Core.Services.MarkdownFile()
                     {
-
-                    }
+                        FileName = "Rec File",
+                        Content = text
+                    });
                 }
             }
 
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            var app = new MrkViewerApp();
             LoadApplication(app);
         }
     }
