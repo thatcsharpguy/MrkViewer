@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using MrkViewer.Core;
+using Java.IO;
 
 namespace MrkViewer.Droid
 {
@@ -19,9 +20,9 @@ namespace MrkViewer.Droid
             Intent.CategoryDefault,
             Intent.CategoryBrowsable,
         },
-        DataScheme="file",
-        DataMimeType="*/*",
-        DataPathPattern=".*\\.md"
+        DataScheme = "file",
+        DataMimeType = "*/*",
+        DataPathPattern = ".*\\.md"
     )]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
@@ -40,14 +41,15 @@ namespace MrkViewer.Droid
             if (Intent.ActionView.Equals(action) && !String.IsNullOrEmpty(type))
             {
 
-                Android.Net.Uri fileUri = (Android.Net.Uri) Intent.Data;
+                Android.Net.Uri fileUri = (Android.Net.Uri)Intent.Data;
                 if (fileUri != null)
                 {
-                    string text = System.IO.File.ReadAllText(fileUri.Path);
+                    var file = new File(fileUri.Path);
+                    //string text = System.IO.File.ReadAllText(fileUri.Path);
                     app.SetExternDocument(new Core.Services.MarkdownFile()
                     {
                         FileName = "Rec File",
-                        Content = text
+                        Content = "**" + file.Name + "**"
                     });
                 }
             }
