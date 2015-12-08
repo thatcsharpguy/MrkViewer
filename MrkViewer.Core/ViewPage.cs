@@ -168,7 +168,7 @@ MIT
 "
 
                 #endregion
-                    , _baseUrl),
+, _baseUrl),
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
@@ -188,7 +188,8 @@ MIT
             openFileButton.Clicked += async (s, a) =>
             {
                 var mdFile = await _fileManager.LoadFile();
-                SetExternDocument(mdFile);
+                if (mdFile != null)
+                    SetExternDocument(mdFile);
             };
             ToolbarItems.Add(openFileButton);
         }
