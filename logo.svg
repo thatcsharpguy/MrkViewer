@@ -11,10 +11,13 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="500"
    height="500"
-   viewBox="0 0 499.99998 499.99998"
+   viewBox="0 0 500.00001 500.00001"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
+   inkscape:export-filename="C:\Users\fferegrino\Documents\GitHub\MrkViewer\MrkViewer.Windows8\Assets\StoreLogo.scale-180.png"
+   inkscape:export-xdpi="16.200001"
+   inkscape:export-ydpi="16.200001"
    sodipodi:docname="logo.svg">
   <defs
      id="defs4" />
@@ -25,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="256.01116"
-     inkscape:cy="456.1383"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="318.89356"
+     inkscape:cy="101.09395"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,14 +38,34 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1366"
-     inkscape:window-height="705"
-     inkscape:window-x="1592"
-     inkscape:window-y="62"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1">
     <sodipodi:guide
-       position="281.76941,250.01275"
+       position="0,150"
        orientation="0,1"
-       id="guide3426" />
+       id="guide4702"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="0,350.00001"
+       orientation="0,1"
+       id="guide4704"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="150,0"
+       orientation="1,0"
+       id="guide4706"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="350.00001,0"
+       orientation="1,0"
+       id="guide4708"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -57,49 +80,15 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="M"
+     inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-552.36209)"
-     style="display:inline">
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot3380"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:179.99998474px;line-height:119.00000572%;font-family:'Eras Bold ITC';-inkscape-font-specification:'Eras Bold ITC';letter-spacing:-0.00556959px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="matrix(2.1555309,0,0,2.1555309,-361.03855,-750.86343)"><flowRegion
-         id="flowRegion3382"><rect
-           id="rect3384"
-           width="1297.1428"
-           height="1394.2858"
-           x="314.28571"
-           y="257.36786"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:179.99998474px;line-height:119.00000572%;font-family:'Eras Bold ITC';-inkscape-font-specification:'Eras Bold ITC';letter-spacing:-0.00556959px;writing-mode:lr-tb" /></flowRegion><flowPara
-         id="flowPara3386"
-         style="font-size:374.99996948px;line-height:119.00000572%;letter-spacing:-0.00556959px;word-spacing:-2.78479362px;writing-mode:lr-tb" /></flowRoot>    <path
-       d="m 65.449219,34.382812 c -17.150878,0 -31.103516,13.954595 -31.103516,31.105469 l 0,369.013669 c 0,17.1517 13.952638,31.10547 31.103516,31.10547 l 369.101561,0 c 17.15173,0 31.10352,-13.95377 31.10352,-31.10547 l 0,-369.013669 c 0,-17.150874 -13.95179,-31.105469 -31.10352,-31.105469 z m 246.822261,99.185538 46.05664,0 0,77.51953 14.36329,-44.23242 38.76171,0 -18.69726,60.30664 24.2832,90.97461 -44.34765,0 -14.36329,-65.89258 0,65.89258 -46.05664,0 z m -37.31445,22.67578 0,26.76563 c 6.57668,-11.82029 15.62681,-18.13043 27.16797,-18.89063 l 0,53.24024 c -8.43612,0 -14.62998,1.13988 -18.58203,3.41992 -3.95207,2.28003 -6.38487,5.47211 -7.29688,9.57617 -0.6999,3.09124 -1.12628,9.38062 -1.28906,18.73828 l 0,68.89258 -0.0781,0 0,0.15039 -46.05664,0 0,-0.10742 -7.7793,0.008 0,-80.86914 -40.43555,51.83984 -40.43554,-51.83984 0,80.86914 -53.912114,0 0,-161.74023 53.912114,0 40.43554,53.91406 40.43555,-53.91406 z"
-       transform="translate(0,552.36209)"
+     transform="translate(0,-552.36216)">
+    <path
+       style="display:inline"
+       d="m 312.14667,707.75704 47.21499,0 0,79.46913 14.72452,-45.34486 39.73658,0 -19.16749,61.82336 24.89391,93.26261 -45.463,0 -14.72452,-67.54977 0,67.54977 -47.21497,0 z m -38.25291,23.24607 0,27.43878 c 6.74212,-12.11756 16.01983,-18.5864 27.85128,-19.36573 l 0,54.57924 c -8.64831,0 -14.99794,1.16855 -19.04937,3.50592 -4.05148,2.33738 -6.54545,5.60975 -7.48041,9.81702 -0.7175,3.16899 -1.15461,9.61655 -1.3215,19.20955 l 0,70.62524 -0.08,0 0,0.1541 -47.21496,0 0,-0.11015 -7.97495,0.009 0,-82.903 -41.4525,53.14362 -41.4525,-53.14362 0,82.903 -55.268003,0 0,-165.808 55.268003,0 41.4525,55.27 41.4525,-55.27 z"
        id="path4"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssssssssccccccccccccccccscccccccccccccccccc" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot3409"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(0,552.36209)"><flowRegion
-         id="flowRegion3411"><rect
-           id="rect3413"
-           width="377.79706"
-           height="175.76654"
-           x="70.710678"
-           y="277.76645" /></flowRegion><flowPara
-         id="flowPara3415"></flowPara></flowRoot>  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Rk">
-    <g
-       transform="matrix(1.2970855,0,0,1.2970855,104.6901,-369.86674)"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="flowRoot3418" />
+       sodipodi:nodetypes="ccccccccccccccccscccccccccccccccccc" />
   </g>
 </svg>
