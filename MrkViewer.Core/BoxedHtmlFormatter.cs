@@ -1,10 +1,5 @@
 ﻿using CommonMark;
 using CommonMark.Syntax;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MrkViewer.Core
 {
@@ -26,8 +21,7 @@ namespace MrkViewer.Core
                 if (isOpening)
                 {
                     //this.Write("<a target=\"_blank\" href=\"#\">");
-                    this.Write(
-                        "Este es un link: " + inline.LiteralContent );
+                    this.Write(inline.LiteralContent);
                 }
 
                 if (isClosing)

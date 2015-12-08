@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="BoxedHtmlFormatter.cs" />
     <Compile Include="MarkdownWebViewSource.cs" />
+    <Compile Include="Samples.cs" />
     <Compile Include="Services\IBaseUrl.cs" />
     <Compile Include="Services\IFileManager.cs" />
     <Compile Include="ViewPage.cs" />

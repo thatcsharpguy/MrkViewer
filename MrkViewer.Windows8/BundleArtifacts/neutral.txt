@@ -1,0 +1,4 @@
+MainPackage=C:\Users\fferegrino\Documents\GitHub\MrkViewer\MrkViewer.Windows8\bin\Release\MrkViewer.Windows8_1.1.0.2_Bundle\MrkViewer.Windows8_1.1.0.2_AnyCPU.appx
+SymbolPackage=C:\Users\fferegrino\Documents\GitHub\MrkViewer\MrkViewer.Windows8\AppPackages\MrkViewer.Windows8_1.1.0.2_Test\MrkViewer.Windows8_1.1.0.2_AnyCPU.appxsym
+ResourcePack=C:\Users\fferegrino\Documents\GitHub\MrkViewer\MrkViewer.Windows8\bin\Release\MrkViewer.Windows8_1.1.0.2_Bundle\MrkViewer.Windows8_1.1.0.2_scale-140.appx
+ResourcePack=C:\Users\fferegrino\Documents\GitHub\MrkViewer\MrkViewer.Windows8\bin\Release\MrkViewer.Windows8_1.1.0.2_Bundle\MrkViewer.Windows8_1.1.0.2_scale-180.appx
