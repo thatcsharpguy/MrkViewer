@@ -15,8 +15,17 @@ namespace MrkViewer.iOS
 			global::Xamarin.Forms.Forms.Init();
 			LoadApplication(new MrkViewerApp());
 
+			// https://dzone.com/articles/ios-file-association-preview
+
 			return base.FinishedLaunching(app, options);
 		}
+
+		public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+		{
+			return true;
+		}
+
+	
 	}
 }
 

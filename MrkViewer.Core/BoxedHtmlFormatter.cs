@@ -20,13 +20,13 @@ namespace MrkViewer.Core
                 // start and end of each node may be visited separately
                 if (isOpening)
                 {
-                    //this.Write("<a target=\"_blank\" href=\"#\">");
+                    this.Write("<u>");
                     this.Write(inline.LiteralContent);
                 }
 
                 if (isClosing)
                 {
-                    //this.Write("</a>");
+                    this.Write("</u>");
                 }
             }
             else

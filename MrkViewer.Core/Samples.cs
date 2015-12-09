@@ -9,13 +9,16 @@ namespace MrkViewer.Core
     public class Samples
     {
         public const string FullDocument =
+
+#region Full document
 @"MkrViewer
 =
 
 MkrViewer is a simple yet powerful Markdown viewer. It is implemented using the Common Mark specification which supports a lot of features. 
 
 # Todo  
-This isn't perfect. I'm planning to implement a ""nigth mode"" along with other different themes (currently MrkViewer uses a theme similar to the one that GitHub uses) and an option to increase or decrease the font size. 
+This isn't perfect. I'm planning to implement a ""night mode"" along with other different themes (currently MrkViewer uses a theme similar to the one that GitHub uses) and an option to increase or decrease the font size. 
+
 
 ## Sample  
 
@@ -159,5 +162,31 @@ MIT
 
 
 ";
+#endregion
+
+		public const string AboutDocument =
+#region About document
+@"MkrViewer is a simple yet powerful markdown viewer mobile (and desktop) platforms. 
+
+Markdown leverages all the capabilities provided by the CommonMark specification which is used in many other applications across the web.  
+
+**This is only a viewer** no plans for editing features in the near future.  
+  
+### But why?  
+Some time ago I bought a cheap Microsoft Surface RT that ended up not being so useful (we can all agree that Windows RT isn't the best OS, right?), I didn't wanted to keep collecting dust with it so I decided to turn it into a markdown reader.  
+  
+I tried several apps (even some paid ones) but no one convinced me, that's when I opened Visual Studio and started this app.
+
+### Tech stuff 
+This app is built using Xamarin.Forms even though the ""viewer"" is implemented using a `WebView` control where the converted Markdown is rendered.  
+
+Speaking of markdown-to-html conversion, the CommonMark implementation for C# is provided by [CommonMark.NET](https://github.com/Knagis/CommonMark.NET).  
+
+### Support, bugs and feature requests
+First of all, if you are here to give feedback, I want to thank you for using MrkViewer and for helping me to improve this app, that being said:  
+
+Please use the <a href=""https://github.com/fferegrino/MrkViewer/issues/new"" target=""_blank"">issues system</a> on GitHub to report any bug or request features.";
+#endregion
+
     }
 }

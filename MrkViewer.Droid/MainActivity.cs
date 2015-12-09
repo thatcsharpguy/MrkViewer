@@ -6,7 +6,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using MrkViewer.Core;
-using Java.IO;
+using System.IO;
+//using Java.IO;
+//using Java.Lang;
 
 namespace MrkViewer.Droid
 {
@@ -44,12 +46,12 @@ namespace MrkViewer.Droid
                 Android.Net.Uri fileUri = (Android.Net.Uri)Intent.Data;
                 if (fileUri != null)
                 {
-                    var file = new File(fileUri.Path);
-                    //string text = System.IO.File.ReadAllText(fileUri.Path);
+                    var fileContent = File.ReadAllText(fileUri.Path);
+                    var name = fileUri.LastPathSegment;
                     app.SetExternDocument(new Core.Services.MarkdownFile()
                     {
-                        FileName = "Rec File",
-                        Content = "**" + file.Name + "**"
+                        FileName = name,
+                        Content = fileContent 
                     });
                 }
             }
@@ -57,6 +59,7 @@ namespace MrkViewer.Droid
 
             LoadApplication(app);
         }
+
     }
 }
 
