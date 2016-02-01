@@ -1,30 +1,25 @@
 ﻿using MrkViewer.Core.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MdViewer.Core;
+using ViewMarkdown.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 
 namespace MrkViewer.Core
 {
     public class ViewPage : ContentPage
     {
-        readonly WebView _webView;
+        readonly MarkdownView _webView;
         readonly IFileManager _fileManager;
-        readonly string _baseUrl;
 
+
+        private readonly string[] _stylesheets = { "markdown", "markdown-alt", "markdown1", "markdown2", "markdown5", "markdown9" };
 
         public ViewPage()
         {
 
             _fileManager = DependencyService.Get<IFileManager>();
-            _baseUrl = DependencyService.Get<IBaseUrl>().Get();
 
-            _webView = new WebView
+            _webView = new MarkdownView
             {
-                Source = new MarkdownWebViewSource(Samples.FullDocument, _baseUrl),
+                Markdown = Samples.AboutDocument,
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
@@ -37,23 +32,36 @@ namespace MrkViewer.Core
 
             var openFileButton = new ToolbarItem
             {
-                Text = "Open",
-                Icon = "open.png"
+                Text = "Open"
             };
-
             openFileButton.Clicked += async (s, a) =>
             {
                 var mdFile = await _fileManager.LoadFile();
                 if (mdFile != null)
                     SetExternDocument(mdFile);
             };
-            ToolbarItems.Add(openFileButton);
+
+
+            int i = 0;
+            var changeCssButton = new ToolbarItem
+            {
+                Text = "CSS"
+            };
+            changeCssButton.Clicked += async (s, a) =>
+            {
+                _webView.Stylesheet = _stylesheets[i++ % _stylesheets.Length];
+            };
+
+            if (Device.OS == TargetPlatform.Windows)
+                ToolbarItems.Add(openFileButton);
+            ToolbarItems.Add(changeCssButton);
+
         }
 
         public void SetExternDocument(MarkdownFile file)
         {
             Title = file.FileName;
-            _webView.Source = new MarkdownWebViewSource(file.Content, _baseUrl);
+            _webView.Markdown = file.Content;
         }
 
     }

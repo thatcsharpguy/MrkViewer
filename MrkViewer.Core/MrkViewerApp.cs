@@ -15,9 +15,10 @@ namespace MrkViewer.Core
 
         public MrkViewerApp()
         {
-            CommonMarkSettings.Default.OutputDelegate = 
-                (doc, output, settings) => new BoxedHtmlFormatter(output, settings).WriteDocument(doc);
-            MainPage = new ViewPage();
+            if (Device.OS == TargetPlatform.Windows)
+                MainPage = new ViewPage();
+            else
+                MainPage = new NavigationPage(new ViewPage());
         }
 
         public void SetExternDocument(MarkdownFile file)
