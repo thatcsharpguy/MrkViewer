@@ -9,11 +9,13 @@ namespace MrkViewer.iOS
 	[Register ("AppDelegate")]
 	public class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
+		MrkViewerApp _app;
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init();
-			LoadApplication(new MrkViewerApp());
+			_app = new MrkViewerApp ();
+			LoadApplication(_app);
 
 			// https://dzone.com/articles/ios-file-association-preview
 
@@ -22,6 +24,21 @@ namespace MrkViewer.iOS
 
 		public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
 		{
+
+			string filePath = url.AbsoluteString.Substring (7);
+			string fileName = url.PathComponents [url.PathComponents.Length - 1];
+
+			string fileContent = System.IO.File.ReadAllText (filePath);
+
+			_app.SetExternDocument(new Core.Services.MarkdownFile()
+				{
+					FileName = fileName,
+					Content = fileContent
+				});
+
+			// Clean-up
+			System.IO.File.Delete(filePath);
+
 			return true;
 		}
 
